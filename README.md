@@ -50,6 +50,40 @@ To use this blueprint, run the below command
 jhipster --blueprint angular-flex
 ```
 
+## Using Docker
+
+Download the Dockerfile:
+
+```bash
+mkdir docker
+cd docker
+wget https://github.com/yeoman-projects/generator-jhipster-angular-flex/raw/master/Dockerfile
+```
+
+Build the Docker images:
+
+```bash
+docker build -t generator-jhipster-angular-flex:latest .
+```
+
+Make a folder where you want to generate the Service:
+
+```bash
+mkdir service
+cd service
+```
+
+Run the generator from image to generate service:
+
+```bash
+docker run -it --rm -v $PWD:/home/jhipster/app generator-jhipster-angular-flex
+```
+
+Run and attach interactive shell to the generator docker container to work from inside the running container:
+
+```bash
+docker run -it --rm -v $PWD:/home/jhipster/app generator-jhipster-angular-flex /bin/bash
+```
 
 ## Running local Blueprint version for development
 
